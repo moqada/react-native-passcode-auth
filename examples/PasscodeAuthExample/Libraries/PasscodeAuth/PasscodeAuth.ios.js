@@ -28,7 +28,7 @@ var Passcode = {
     });
   },
 
-  authenticate(reason) {
+  authenticate(reason: string) {
     var authReason;
 
     // Set auth reason
