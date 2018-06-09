@@ -16,7 +16,7 @@ var NativePasscodeAuth = NativeModules.PasscodeAuth;
  */
 
 var PasscodeAuth = {
-  isSupported() {
+  isSupported(): Promise<boolean> {
     return new Promise(function(resolve, reject) {
       NativePasscodeAuth.isSupported(function(error) {
         if (error) {
@@ -28,7 +28,7 @@ var PasscodeAuth = {
     });
   },
 
-  authenticate(reason: string) {
+  authenticate(reason: string): Promise<boolean> {
     var authReason;
 
     // Set auth reason
